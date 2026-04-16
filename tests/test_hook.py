@@ -81,7 +81,7 @@ def test_finder_sets_patched_flag_and_stops_repatching(hook_module, monkeypatch)
     )
 
     monkeypatch.setattr(importlib.util, "find_spec", fake_find_spec)
-    monkeypatch.setitem(sys.modules, "anthropic_billing_bypass", bypass_module)
+    monkeypatch.setitem(sys.modules, "good", bypass_module)
 
     hook_module._install_hook()
     finder = next(

@@ -2,7 +2,7 @@
 
 import copy
 
-from anthropic_billing_bypass import (
+from good import (
     _SYSTEM_IDENTITY,
     _fix_temperature_for_oauth_adaptive,
     apply_claude_code_bypass,

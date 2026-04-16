@@ -67,9 +67,9 @@ def _install_hook() -> None:
                 original_exec(module)
                 finder._patched = True
                 try:
-                    import anthropic_billing_bypass
+                    import good
 
-                    anthropic_billing_bypass.apply_patches(module)
+                    good.apply_patches(module)
                 except Exception as exc:
                     import traceback
 

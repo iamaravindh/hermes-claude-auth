@@ -73,7 +73,7 @@ fi
 
 if [ "$PURGE" -eq 1 ]; then
   PATCH_DIR="$HOME/.hermes/patches"
-  PATCH_FILE="$PATCH_DIR/anthropic_billing_bypass.py"
+  PATCH_FILE="$PATCH_DIR/good.py"
 
   if [ -e "$PATCH_FILE" ]; then
     rm -f "$PATCH_FILE"

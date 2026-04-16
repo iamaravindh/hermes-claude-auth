@@ -2,7 +2,7 @@
 
 import hashlib
 
-from anthropic_billing_bypass import (
+from good import (
     _build_billing_header_value,
     _compute_cch,
     _compute_version_suffix,

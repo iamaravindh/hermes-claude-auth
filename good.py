@@ -64,7 +64,7 @@ import sys
 import traceback
 from typing import Any, Dict, List
 
-logger = logging.getLogger("anthropic_billing_bypass")
+logger = logging.getLogger("good")
 
 # ---------------------------------------------------------------------------
 # Cryptographic signing (ported from opencode-claude-auth/src/signing.ts)
@@ -318,7 +318,7 @@ def _install_aux_client_hook(force: bool = False) -> bool:
     except Exception as exc:
         logger.warning("aux_client_hook_failed_import: %s: %s", type(exc).__name__, exc)
         sys.stderr.write(
-            f"[anthropic_billing_bypass] aux_client_hook_failed_import: "
+            f"[good] aux_client_hook_failed_import: "
             f"{type(exc).__name__}: {exc}\n"
         )
         return False
@@ -402,7 +402,7 @@ def _install_aux_client_hook(force: bool = False) -> bool:
         "Aux client temperature hook installed on _AnthropicCompletionsAdapter.create"
     )
     sys.stderr.write(
-        "[anthropic_billing_bypass] Aux client temperature hook installed\n"
+        "[good] Aux client temperature hook installed\n"
     )
     return True
 
@@ -490,7 +490,7 @@ def apply_patches(anthropic_adapter_module: Any = None) -> bool:
     aa.build_anthropic_kwargs = patched_build_anthropic_kwargs
     aa._CLAUDE_CODE_BYPASS_APPLIED = True  # type: ignore[attr-defined]
     logger.info("Claude Code OAuth bypass installed (build_anthropic_kwargs)")
-    sys.stderr.write("[anthropic_billing_bypass] Claude Code OAuth bypass installed\n")
+    sys.stderr.write("[good] Claude Code OAuth bypass installed\n")
 
     _install_aux_client_hook()
 

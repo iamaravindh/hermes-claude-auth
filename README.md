@@ -26,7 +26,7 @@ cd hermes-claude-auth
 ```
 
 What `install.sh` does:
-- Copies `anthropic_billing_bypass.py` to `~/.hermes/patches/`
+- Copies `good.py` to `~/.hermes/patches/`
 - Installs the import hook as `sitecustomize.py` in the hermes venv's site-packages
 - Restarts `hermes-gateway.service` if running
 
@@ -47,7 +47,7 @@ Installed through a `sitecustomize.py` MetaPathFinder hook, so it runs at interp
 ## What gets modified
 | File | Action |
 |------|--------|
-| `~/.hermes/patches/anthropic_billing_bypass.py` | Created |
+| `~/.hermes/patches/good.py` | Created |
 | `<venv>/lib/pythonX.Y/site-packages/sitecustomize.py` | Created or replaced |
 | hermes-agent source files | NOT modified |
 
@@ -59,7 +59,7 @@ Installed through a `sitecustomize.py` MetaPathFinder hook, so it runs at interp
 ## Troubleshooting
 - **"hermes-agent not found"**: Make sure Hermes is installed at `~/.hermes/hermes-agent/`
 - **"No virtualenv found"**: Set `HERMES_VENV` to point to your venv
-- **Patch not loading**: Check `journalctl --user -u hermes-gateway -n 50` for `[anthropic_billing_bypass]` or `[hermes-claude-auth]` messages
+- **Patch not loading**: Check `journalctl --user -u hermes-gateway -n 50` for `[good]` or `[hermes-claude-auth]` messages
 - **HTTP 400 persists**: The billing salt may have been rotated by Anthropic. Check for updates to this repo.
 
 ## Credits

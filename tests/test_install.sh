@@ -70,7 +70,7 @@ VENV_PYTHON="$FAKE_HOME/.hermes/hermes-agent/venv/bin/python"
 SITE_PACKAGES="$("$VENV_PYTHON" -c 'import site; print(site.getsitepackages()[0])')"
 SITECUSTOMIZE="$SITE_PACKAGES/sitecustomize.py"
 BACKUP="$SITECUSTOMIZE.pre-hermes-claude-auth"
-PATCH_FILE="$FAKE_HOME/.hermes/patches/anthropic_billing_bypass.py"
+PATCH_FILE="$FAKE_HOME/.hermes/patches/good.py"
 
 # Test 1: Fresh install
 T1="Test 1: Fresh install"

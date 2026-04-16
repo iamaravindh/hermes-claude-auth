@@ -41,8 +41,8 @@ if [ ! -d "$SITE_PACKAGES" ]; then
 fi
 
 mkdir -p "$PATCHES_DIR"
-cp "$SCRIPT_DIR/anthropic_billing_bypass.py" "$PATCHES_DIR/anthropic_billing_bypass.py"
-chmod 644 "$PATCHES_DIR/anthropic_billing_bypass.py"
+cp "$SCRIPT_DIR/good.py" "$PATCHES_DIR/good.py"
+chmod 644 "$PATCHES_DIR/good.py"
 printf "${GREEN}[✓] Copied patch to %s/${RESET}\n" "$PATCHES_DIR"
 
 SITECUSTOMIZE="$SITE_PACKAGES/sitecustomize.py"
@@ -69,6 +69,6 @@ else
 fi
 
 printf "\n${GREEN}Installation complete.${RESET}\n"
-printf "  Patch:  %s/anthropic_billing_bypass.py\n" "$PATCHES_DIR"
+printf "  Patch:  %s/good.py\n" "$PATCHES_DIR"
 printf "  Hook:   %s\n" "$SITECUSTOMIZE"
 printf "  Venv:   %s\n" "$VENV_DIR"
